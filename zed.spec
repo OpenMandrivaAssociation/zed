@@ -39,7 +39,7 @@ Code at the speed of thought - Zed is a high-performance, multiplayer code edito
 
 %prep
 # Vendored sources
-%autosetup -p1 -a1
+%autosetup -n %{name}-%{version}-pre -p1 -a1
 
 %build
 export ZED_UPDATE_EXPLANATION="Please use the package manager to update zed."
