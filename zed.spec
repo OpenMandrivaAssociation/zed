@@ -1,36 +1,16 @@
-%if 0%{?suse_version} && 0%{?suse_version} < 1550
-%global force_gcc_version 13
-%endif
-
-# mold is not on Leap yet
-%if 0%{?suse_version} > 1600
-%bcond_without mold
-%else
-%bcond_with    mold
-%endif
-
-%if %{with mold}
-%global build_rustflags "-C" "linker=clang" "-C" "link-arg='-fuse-ld=/usr/bin/mold -Wl,-z,relro,-z,now'" "-C" "debuginfo=2" "-C" "incremental=false" "-C" "strip=none"
-%endif
-
 Name:           zed
-Version:        0.143.6
-Release:        0
+Version:        0.144.0
+Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
 Group:          Development/Tools/IDE
 URL:            https://github.com/zed-industries/zed
-Source0:        %{name}-%{version}.tar.zst
-Source1:        vendor.tar.zst
-BuildRequires:  git
-BuildRequires:  gcc%{?force_gcc_version}-c++
-BuildRequires:  cargo-packaging
-BuildRequires:  hicolor-icon-theme
+Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v%{version}-pre/%{name}-%{version}-pre.tar.gz
+Source1:        vendor.tar.xz
 
-%if %{with mold}
-BuildRequires:  mold
-BuildRequires:  clang
-%endif
+BuildRequires:  git
+BuildRequires:  rust-packaging
+BuildRequires:  hicolor-icon-theme
 
 # all pkgconfig BR are based on the the build.rs files in the vendor tree
 BuildRequires:  pkgconfig(alsa)
@@ -51,7 +31,6 @@ BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:  pkgconfig(xkbcommon-x11)
 
-ExclusiveArch:  x86_64 aarch64
 # otherwise it downloads a copy of nodejs
 Requires:       npm
 
@@ -63,18 +42,13 @@ Code at the speed of thought - Zed is a high-performance, multiplayer code edito
 %autosetup -p1 -a1
 
 %build
-%if 0%{?force_gcc_version}
-export CC="gcc-%{?force_gcc_version}"
-export CXX="g++-%{?force_gcc_version}"
-%endif
-
 export ZED_UPDATE_EXPLANATION="Please use the package manager to update zed."
 # Build CLI
 cd crates/cli/
-%{cargo_build}
+cargo build --release
 # Build Editor
 cd ../zed/
-%{cargo_build}
+cargo build --release
 
 %install
 install -D -d -m 0755 %{buildroot}%{_bindir}
@@ -101,5 +75,3 @@ install -Dm 0644 assets/icons/logo_96.svg %{buildroot}%{_datadir}/icons/hicolor/
 %{_libexecdir}/zed-editor
 %{_datadir}/applications/zed.desktop
 %{_datadir}/icons/hicolor/scalable/apps/zed.svg
-
-%changelog
