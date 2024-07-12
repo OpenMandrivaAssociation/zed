@@ -142,7 +142,7 @@ cd crates/cli/
 cargo build --release
 # Build Editor
 cd ../zed/
-cargo build --release
+cargo build --verbose
 
 %install
 install -D -d -m 0755 %{buildroot}%{_bindir}
