@@ -137,7 +137,7 @@ EOF
 
 %build
 export ZED_UPDATE_EXPLANATION="Please use the package manager to update zed."
-export rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+%global build_rustflags "-C" "linker=clang" "-C" "link-arg='-fuse-ld=/usr/bin/mold -Wl,-z,relro,-z,now'" "-C" "debuginfo=2" "-C" "incremental=false" "-C" "strip=none"
 # Build CLI
 cd crates/cli/
 cargo build --release
