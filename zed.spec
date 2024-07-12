@@ -9,6 +9,7 @@ Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v%{versi
 Source1:        vendor.tar.xz
 
 BuildRequires:  git
+BuildRequires:  clang
 BuildRequires:  rust-packaging
 BuildRequires:  hicolor-icon-theme
 
@@ -135,12 +136,7 @@ EOF
 
 %build
 export ZED_UPDATE_EXPLANATION="Please use the package manager to update zed."
-# Build CLI
-cd crates/cli/
-cargo build --release
-# Build Editor
-cd ../zed/
-cargo build --release
+cargo build -- --package zed --package cli
 
 %install
 install -D -d -m 0755 %{buildroot}%{_bindir}
