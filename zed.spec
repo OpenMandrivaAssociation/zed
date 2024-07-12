@@ -136,7 +136,7 @@ EOF
 
 %build
 export ZED_UPDATE_EXPLANATION="Please use the package manager to update zed."
-cargo build -- --package zed --package cli
+cargo build --package zed --package cli
 
 %install
 install -D -d -m 0755 %{buildroot}%{_bindir}
