@@ -10,6 +10,7 @@ Source1:        vendor.tar.xz
 
 BuildRequires:  git
 BuildRequires:  clang
+BuildRequires:  mold
 BuildRequires:  rust-packaging
 BuildRequires:  hicolor-icon-theme
 
