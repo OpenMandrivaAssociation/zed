@@ -1,5 +1,5 @@
 Name:           zed
-Version:        0.144.0
+Version:        0.147.1
 Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
@@ -47,14 +47,14 @@ cat >>.cargo/config <<EOF
 [source.crates-io]
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/ConradIrwin/xkbcommon-rs?rev=fcbb4612185cc129ceeff51d22f7fb51810a03b2"]
+git = "https://github.com/ConradIrwin/xkbcommon-rs"
+rev = "fcbb4612185cc129ceeff51d22f7fb51810a03b2"
+replace-with = "vendored-sources"
+
 [source."git+https://github.com/KillTheMule/nvim-rs?branch=master"]
 git = "https://github.com/KillTheMule/nvim-rs"
 branch = "master"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/MDeiml/tree-sitter-markdown?rev=330ecab87a3e3a7211ac69bbadc19eabecdb1cca"]
-git = "https://github.com/MDeiml/tree-sitter-markdown"
-rev = "330ecab87a3e3a7211ac69bbadc19eabecdb1cca"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/alacritty/alacritty?rev=cacdb5bb3b72bad2c729227537979d95af75978f"]
@@ -62,18 +62,14 @@ git = "https://github.com/alacritty/alacritty"
 rev = "cacdb5bb3b72bad2c729227537979d95af75978f"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/bilelmoussaoui/ashpd?rev=29f2e1a"]
-git = "https://github.com/bilelmoussaoui/ashpd"
-rev = "29f2e1a"
+[source."git+https://github.com/camdencheek/tree-sitter-go-mod?rev=1f55029bacd0a6a11f6eb894c4312d429dcf735c"]
+git = "https://github.com/camdencheek/tree-sitter-go-mod"
+rev = "1f55029bacd0a6a11f6eb894c4312d429dcf735c"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/d1y/tree-sitter-go-work"]
+[source."git+https://github.com/d1y/tree-sitter-go-work?rev=dcbabff454703c3a4bc98a23cf8778d4be46fd22"]
 git = "https://github.com/d1y/tree-sitter-go-work"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/kvark/blade?rev=21a56f780e21e4cb42c70a1dcf4b59842d1ad7f7"]
-git = "https://github.com/kvark/blade"
-rev = "21a56f780e21e4cb42c70a1dcf4b59842d1ad7f7"
+rev = "dcbabff454703c3a4bc98a23cf8778d4be46fd22"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/npmania/xim-rs?rev=27132caffc5b9bc9c432ca4afad184ab6e7c16af"]
@@ -81,9 +77,9 @@ git = "https://github.com/npmania/xim-rs"
 rev = "27132caffc5b9bc9c432ca4afad184ab6e7c16af"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/phoenixframework/tree-sitter-heex?rev=2e1348c3cf2c9323e87c2744796cf3f3868aa82a"]
+[source."git+https://github.com/phoenixframework/tree-sitter-heex?rev=6dd0303acf7138dd2b9b432a229e16539581c701"]
 git = "https://github.com/phoenixframework/tree-sitter-heex"
-rev = "2e1348c3cf2c9323e87c2744796cf3f3868aa82a"
+rev = "6dd0303acf7138dd2b9b432a229e16539581c701"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/pop-os/cosmic-text?rev=542b20c"]
@@ -91,29 +87,9 @@ git = "https://github.com/pop-os/cosmic-text"
 rev = "542b20c"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/rewinfrey/tree-sitter-proto?rev=36d54f288aee112f13a67b550ad32634d0c2cb52"]
-git = "https://github.com/rewinfrey/tree-sitter-proto"
-rev = "36d54f288aee112f13a67b550ad32634d0c2cb52"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/servo/pathfinder.git?rev=4968e819c0d9b015437ffc694511e175801a17c7"]
-git = "https://github.com/servo/pathfinder.git"
-rev = "4968e819c0d9b015437ffc694511e175801a17c7"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/tree-sitter/tree-sitter-go?rev=b82ab803d887002a0af11f6ce63d72884580bf33"]
-git = "https://github.com/tree-sitter/tree-sitter-go"
-rev = "b82ab803d887002a0af11f6ce63d72884580bf33"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/tree-sitter/tree-sitter-jsdoc?rev=6a6cf9e7341af32d8e2b2e24a37fbfebefc3dc55"]
-git = "https://github.com/tree-sitter/tree-sitter-jsdoc"
-rev = "6a6cf9e7341af32d8e2b2e24a37fbfebefc3dc55"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/tree-sitter/tree-sitter?rev=7b4894ba2ae81b988846676f54c0988d4027ef4f"]
+[source."git+https://github.com/tree-sitter/tree-sitter?rev=7f4a57817d58a2f134fe863674acad6bbf007228"]
 git = "https://github.com/tree-sitter/tree-sitter"
-rev = "7b4894ba2ae81b988846676f54c0988d4027ef4f"
+rev = "7f4a57817d58a2f134fe863674acad6bbf007228"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/zed-industries/async-pipe-rs?rev=82d00a04211cf4e1236029aa03e6b6ce2a74c553"]
@@ -121,9 +97,14 @@ git = "https://github.com/zed-industries/async-pipe-rs"
 rev = "82d00a04211cf4e1236029aa03e6b6ce2a74c553"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/zed-industries/font-kit?rev=5a5c4d4"]
+[source."git+https://github.com/zed-industries/blade?rev=7e497c534d5d4a30c18d9eb182cf39eaf0aaa25e"]
+git = "https://github.com/zed-industries/blade"
+rev = "7e497c534d5d4a30c18d9eb182cf39eaf0aaa25e"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/zed-industries/font-kit?rev=40391b7"]
 git = "https://github.com/zed-industries/font-kit"
-rev = "5a5c4d4"
+rev = "40391b7"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/zed-industries/lsp-types?rev=72357d6f6d212bdffba3b5ef4b31d8ca856058e7"]
@@ -131,8 +112,14 @@ git = "https://github.com/zed-industries/lsp-types"
 rev = "72357d6f6d212bdffba3b5ef4b31d8ca856058e7"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/zed-industries/tree-sitter-markdown?rev=e3855e37f8f2c71aa7513c18a9c95fb7461b1b10"]
+git = "https://github.com/zed-industries/tree-sitter-markdown"
+rev = "e3855e37f8f2c71aa7513c18a9c95fb7461b1b10"
+replace-with = "vendored-sources"
+
 [source.vendored-sources]
 directory = "vendor"
+
 EOF
 
 %build
