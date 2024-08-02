@@ -12,6 +12,7 @@ BuildRequires:  git
 BuildRequires:  clang
 BuildRequires:  mold
 BuildRequires:  rust-packaging
+BuildRequires:	rust >= 1.80.0-2
 BuildRequires:  hicolor-icon-theme
 
 # all pkgconfig BR are based on the the build.rs files in the vendor tree
