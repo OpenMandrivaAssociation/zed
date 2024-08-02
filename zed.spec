@@ -124,20 +124,21 @@ EOF
 
 %build
 export ZED_UPDATE_EXPLANATION="Please use the package manager to update zed."
+
 # Build CLI
 cd crates/cli/
 cargo build --release
 # Build Editor
 cd ../zed/
-cargo build --verbose
+cargo build --release --verbose
 
 %install
 install -D -d -m 0755 %{buildroot}%{_bindir}
 install -D -d -m 0755 %{buildroot}%{_libexecdir}
 
 # https://github.com/zed-industries/zed/blob/main/script/bundle-linux#L59
-install -m 0755 %{_builddir}/%{name}-%{version}/target/release/zed %{buildroot}%{_libexecdir}/zed-editor
-install -m 0755 %{_builddir}/%{name}-%{version}/target/release/cli %{buildroot}%{_bindir}/zed
+install -m 0755 %{_builddir}/%{name}-%{version}-pre/target/release/zed %{buildroot}%{_libexecdir}/zed-editor
+install -m 0755 %{_builddir}/%{name}-%{version}-pre/target/release/cli %{buildroot}%{_bindir}/zed
 
 # Desktop file
 # https://github.com/zed-industries/zed/blob/main/script/bundle-linux#L81
