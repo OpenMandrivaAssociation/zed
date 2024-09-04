@@ -148,7 +148,7 @@ export APP_CLI="zed"
 export APP_ICON="zed"
 export APP_NAME="Zed"
 #envsubst < "crates/zed/resources/zed.desktop.in" > "crates/zed/resources/zed.desktop"
-install -Dm 0644 crates/zed/resources/zed.desktop %{buildroot}%{_datadir}/applications/zed.desktop
+#install -Dm 0644 crates/zed/resources/zed.desktop %{buildroot}%{_datadir}/applications/zed.desktop
 install -Dm 0644 assets/icons/logo_96.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/zed.svg
 
 %files
