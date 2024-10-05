@@ -144,8 +144,8 @@ install -D -d -m 0755 %{buildroot}%{_bindir}
 install -D -d -m 0755 %{buildroot}%{_libexecdir}
 
 # https://github.com/zed-industries/zed/blob/main/script/bundle-linux#L59
-install -m 0755 %{_builddir}/%{name}-%{version}-pre/target/release/zed %{buildroot}%{_libexecdir}/zed-editor
-install -m 0755 %{_builddir}/%{name}-%{version}-pre/target/release/cli %{buildroot}%{_bindir}/zed
+install -m 0755 %{_builddir}/%{name}-%{version}/target/release/zed %{buildroot}%{_libexecdir}/zed-editor
+install -m 0755 %{_builddir}/%{name}-%{version}/target/release/cli %{buildroot}%{_bindir}/zed
 
 # Desktop file
 # https://github.com/zed-industries/zed/blob/main/script/bundle-linux#L81
