@@ -14,7 +14,7 @@ BuildRequires:  mold
 BuildRequires:  rust-packaging
 BuildRequires:	rust >= 1.80.0-2
 BuildRequires:  hicolor-icon-theme
-
+BuildRequires:  gettext-devel
 # all pkgconfig BR are based on the the build.rs files in the vendor tree
 BuildRequires:  pkgconfig(alsa)
 BuildRequires:  pkgconfig(egl)
@@ -147,8 +147,8 @@ export DO_STARTUP_NOTIFY="true"
 export APP_CLI="zed"
 export APP_ICON="zed"
 export APP_NAME="Zed"
-#envsubst < "crates/zed/resources/zed.desktop.in" > "crates/zed/resources/zed.desktop"
-#install -Dm 0644 crates/zed/resources/zed.desktop %{buildroot}%{_datadir}/applications/zed.desktop
+envsubst < "crates/zed/resources/zed.desktop.in" > "crates/zed/resources/zed.desktop"
+install -Dm 0644 crates/zed/resources/zed.desktop %{buildroot}%{_datadir}/applications/zed.desktop
 install -Dm 0644 assets/icons/logo_96.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/zed.svg
 
 %files
