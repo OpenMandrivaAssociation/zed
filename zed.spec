@@ -4,7 +4,7 @@ Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
 Group:          Development/Tools/IDE
-URL:            https://github.com/zed-industries/zed
+URL:            https://zed.dev/
 Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 Source1:        vendor.tar.xz
 
