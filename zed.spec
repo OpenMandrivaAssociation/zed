@@ -1,5 +1,5 @@
 Name:           zed
-Version:        0.156.1
+Version:        0.157.5
 Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
@@ -113,11 +113,6 @@ git = "https://github.com/zed-industries/tree-sitter-markdown"
 rev = "4cfa6aad6b75052a5077c80fd934757d9267d81b"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/zed-industries/tree-sitter-proto?rev=0848bd30a64be48772e15fbb9d5ba8c0cc5772ad"]
-git = "https://github.com/zed-industries/tree-sitter-proto"
-rev = "0848bd30a64be48772e15fbb9d5ba8c0cc5772ad"
-replace-with = "vendored-sources"
-
 [source."git+https://github.com/zed-industries/tree-sitter-yaml?rev=baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a"]
 git = "https://github.com/zed-industries/tree-sitter-yaml"
 rev = "baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a"
@@ -125,6 +120,7 @@ replace-with = "vendored-sources"
 
 [source.vendored-sources]
 directory = "vendor"
+
 
 
 EOF
