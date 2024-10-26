@@ -1,5 +1,5 @@
 Name:           zed
-Version:        0.157.5
+Version:        0.158.2
 Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
@@ -83,6 +83,11 @@ git = "https://github.com/zed-industries/async-pipe-rs"
 rev = "82d00a04211cf4e1236029aa03e6b6ce2a74c553"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/zed-industries/async-stripe?rev=3672dd4efb7181aa597bf580bf5a2f5d23db6735"]
+git = "https://github.com/zed-industries/async-stripe"
+rev = "3672dd4efb7181aa597bf580bf5a2f5d23db6735"
+replace-with = "vendored-sources"
+
 [source."git+https://github.com/zed-industries/font-kit?rev=40391b7"]
 git = "https://github.com/zed-industries/font-kit"
 rev = "40391b7"
@@ -91,6 +96,11 @@ replace-with = "vendored-sources"
 [source."git+https://github.com/zed-industries/lsp-types?rev=72357d6f6d212bdffba3b5ef4b31d8ca856058e7"]
 git = "https://github.com/zed-industries/lsp-types"
 rev = "72357d6f6d212bdffba3b5ef4b31d8ca856058e7"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/zed-industries/reqwest.git?rev=fd110f6998da16bbca97b6dddda9be7827c50e29"]
+git = "https://github.com/zed-industries/reqwest.git"
+rev = "fd110f6998da16bbca97b6dddda9be7827c50e29"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/zed-industries/tree-sitter-go-mod?rev=a9aea5e358cde4d0f8ff20b7bc4fa311e359c7ca"]
