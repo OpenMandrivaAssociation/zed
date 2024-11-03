@@ -1,5 +1,5 @@
 Name:           zed
-Version:        0.158.2
+Version:        0.159.7
 Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
@@ -73,9 +73,19 @@ git = "https://github.com/kvark/blade"
 rev = "e142a3a5e678eb6a13e642ad8401b1f3aa38e969"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/microsoft/python-environment-tools.git?rev=ffcbf3f28c46633abd5448a52b1f396c322e0d6c"]
+git = "https://github.com/microsoft/python-environment-tools.git"
+rev = "ffcbf3f28c46633abd5448a52b1f396c322e0d6c"
+replace-with = "vendored-sources"
+
 [source."git+https://github.com/pop-os/cosmic-text?rev=542b20c"]
 git = "https://github.com/pop-os/cosmic-text"
 rev = "542b20c"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/tree-sitter-grammars/tree-sitter-markdown?rev=9a23c1a96c0513d8fc6520972beedd419a973539"]
+git = "https://github.com/tree-sitter-grammars/tree-sitter-markdown"
+rev = "9a23c1a96c0513d8fc6520972beedd419a973539"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/zed-industries/async-pipe-rs?rev=82d00a04211cf4e1236029aa03e6b6ce2a74c553"]
@@ -118,11 +128,6 @@ git = "https://github.com/zed-industries/tree-sitter-heex"
 rev = "1dd45142fbb05562e35b2040c6129c9bca346592"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/zed-industries/tree-sitter-markdown?rev=4cfa6aad6b75052a5077c80fd934757d9267d81b"]
-git = "https://github.com/zed-industries/tree-sitter-markdown"
-rev = "4cfa6aad6b75052a5077c80fd934757d9267d81b"
-replace-with = "vendored-sources"
-
 [source."git+https://github.com/zed-industries/tree-sitter-yaml?rev=baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a"]
 git = "https://github.com/zed-industries/tree-sitter-yaml"
 rev = "baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a"
@@ -130,6 +135,7 @@ replace-with = "vendored-sources"
 
 [source.vendored-sources]
 directory = "vendor"
+
 
 
 
