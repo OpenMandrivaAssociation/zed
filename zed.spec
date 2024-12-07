@@ -1,5 +1,5 @@
 Name:           zed
-Version:        0.163.2
+Version:        0.164.2
 Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
