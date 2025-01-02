@@ -1,11 +1,11 @@
 Name:           zed
-Version:        0.167.1
-Release:        1
+Version:        0.168.0~pre
+Release:        0
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
 Group:          Development/Tools/IDE
 URL:            https://zed.dev/
-Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v0.168.0-pre/%{name}-0.168.0-pre.tar.gz
 Source1:        vendor.tar.xz
 
 BuildRequires:  git
@@ -42,7 +42,7 @@ Code at the speed of thought - Zed is a high-performance, multiplayer code edito
 
 %prep
 # Vendored sources
-%autosetup -n %{name}-%{version} -p1 -a1
+%autosetup -n %{name}-0.168.0-pre -p1 -a1
 %cargo_prep -v vendor
 cat >>.cargo/config <<EOF
 [source.crates-io]
@@ -63,14 +63,9 @@ git = "https://github.com/XDeme1/xim-rs"
 rev = "d50d461764c2213655cd9cf65a0ea94c70d3c4fd"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/alacritty/alacritty?rev=91d034ff8b53867143c005acfaa14609147c9a2c"]
-git = "https://github.com/alacritty/alacritty"
-rev = "91d034ff8b53867143c005acfaa14609147c9a2c"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/kvark/blade?rev=e142a3a5e678eb6a13e642ad8401b1f3aa38e969"]
+[source."git+https://github.com/kvark/blade?rev=091a8401033847bb9b6ace3fcf70448d069621c5"]
 git = "https://github.com/kvark/blade"
-rev = "e142a3a5e678eb6a13e642ad8401b1f3aa38e969"
+rev = "091a8401033847bb9b6ace3fcf70448d069621c5"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/microsoft/python-environment-tools.git?rev=ffcbf3f28c46633abd5448a52b1f396c322e0d6c"]
@@ -108,6 +103,11 @@ git = "https://github.com/zed-industries/font-kit"
 rev = "40391b7"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/zed-industries/livekit-rust-sdks?rev=060964da10574cd9bf06463a53bf6e0769c5c45e"]
+git = "https://github.com/zed-industries/livekit-rust-sdks"
+rev = "060964da10574cd9bf06463a53bf6e0769c5c45e"
+replace-with = "vendored-sources"
+
 [source."git+https://github.com/zed-industries/lsp-types?rev=72357d6f6d212bdffba3b5ef4b31d8ca856058e7"]
 git = "https://github.com/zed-industries/lsp-types"
 rev = "72357d6f6d212bdffba3b5ef4b31d8ca856058e7"
@@ -116,11 +116,6 @@ replace-with = "vendored-sources"
 [source."git+https://github.com/zed-industries/reqwest.git?rev=fd110f6998da16bbca97b6dddda9be7827c50e29"]
 git = "https://github.com/zed-industries/reqwest.git"
 rev = "fd110f6998da16bbca97b6dddda9be7827c50e29"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/zed-industries/rust-sdks?rev=799f10133d93ba2a88642cd480d01ec4da53408c"]
-git = "https://github.com/zed-industries/rust-sdks"
-rev = "799f10133d93ba2a88642cd480d01ec4da53408c"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/zed-industries/tree-sitter-go-mod?rev=a9aea5e358cde4d0f8ff20b7bc4fa311e359c7ca"]
