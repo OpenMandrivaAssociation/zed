@@ -138,6 +138,11 @@ git = "https://github.com/zed-industries/tree-sitter-yaml"
 rev = "baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/zed-industries/livekit-rust-sdks?rev=060964da10574cd9bf06463a53bf6e0769c5c45e"]
+git = "https://github.com/zed-industries/livekit-rust-sdks"
+rev = "060964da10574cd9bf06463a53bf6e0769c5c45e"
+replace-with = "vendored-sources"
+
 [source.vendored-sources]
 directory = "vendor"
 
