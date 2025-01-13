@@ -23,6 +23,7 @@ BuildRequires:  pkgconfig(freetype2) >= 18.5.12
 BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  pkgconfig(libgit2)
 BuildRequires:  pkgconfig(libzstd)
+BuildRequires:  pkgconfig(bzip2)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(wayland-client)
