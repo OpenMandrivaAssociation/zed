@@ -1,11 +1,11 @@
 Name:           zed
-Version:        0.168.0~pre
-Release:        0
+Version:        0.168.2
+Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
 Group:          Development/Tools/IDE
 URL:            https://zed.dev/
-Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v0.168.0-pre/%{name}-0.168.0-pre.tar.gz
+Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v0.168.2/%{name}-0.168.2.tar.gz
 Source1:        vendor.tar.xz
 
 BuildRequires:  git
@@ -42,7 +42,7 @@ Code at the speed of thought - Zed is a high-performance, multiplayer code edito
 
 %prep
 # Vendored sources
-%autosetup -n %{name}-0.168.0-pre -p1 -a1
+%autosetup -n %{name}-0.168.2 -p1 -a1
 %cargo_prep -v vendor
 cat >>.cargo/config <<EOF
 [source.crates-io]
@@ -140,7 +140,6 @@ replace-with = "vendored-sources"
 
 [source.vendored-sources]
 directory = "vendor"
-
 
 EOF
 
