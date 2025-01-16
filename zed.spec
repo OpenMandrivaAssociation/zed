@@ -1,11 +1,11 @@
 Name:           zed
-Version:        0.168.2
+Version:        0.170.0~pre
 Release:        1
 Summary:        A high-performance, multiplayer code editor
 License:        AGPL-3.0-or-later AND Apache-2.0 AND GPL-3.0-only
 Group:          Development/Tools/IDE
 URL:            https://zed.dev/
-Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v0.168.2/%{name}-0.168.2.tar.gz
+Source0:        https://github.com/zed-industries/zed/archive/refs/tags/v0.170.0-pre/%{name}-0.170.0-pre.tar.gz
 Source1:        vendor.tar.xz
 
 BuildRequires:  git
@@ -43,7 +43,7 @@ Code at the speed of thought - Zed is a high-performance, multiplayer code edito
 
 %prep
 # Vendored sources
-%autosetup -n %{name}-0.168.2 -p1 -a1
+%autosetup -n %{name}-0.170.0-pre -p1 -a1
 %cargo_prep -v vendor
 cat >>.cargo/config <<EOF
 [source.crates-io]
@@ -64,14 +64,19 @@ git = "https://github.com/XDeme1/xim-rs"
 rev = "d50d461764c2213655cd9cf65a0ea94c70d3c4fd"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/camdencheek/tree-sitter-go-mod?rev=6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c"]
+git = "https://github.com/camdencheek/tree-sitter-go-mod"
+rev = "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c"
+replace-with = "vendored-sources"
+
 [source."git+https://github.com/kvark/blade?rev=091a8401033847bb9b6ace3fcf70448d069621c5"]
 git = "https://github.com/kvark/blade"
 rev = "091a8401033847bb9b6ace3fcf70448d069621c5"
 replace-with = "vendored-sources"
 
-[source."git+https://github.com/microsoft/python-environment-tools.git?rev=ffcbf3f28c46633abd5448a52b1f396c322e0d6c"]
+[source."git+https://github.com/microsoft/python-environment-tools.git?rev=1abe5cec5ebfbe97ca71746a4cfc7fe89bddf8e0"]
 git = "https://github.com/microsoft/python-environment-tools.git"
-rev = "ffcbf3f28c46633abd5448a52b1f396c322e0d6c"
+rev = "1abe5cec5ebfbe97ca71746a4cfc7fe89bddf8e0"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/pop-os/cosmic-text?rev=542b20c"]
@@ -114,14 +119,14 @@ git = "https://github.com/zed-industries/lsp-types"
 rev = "72357d6f6d212bdffba3b5ef4b31d8ca856058e7"
 replace-with = "vendored-sources"
 
+[source."git+https://github.com/zed-industries/oo7?branch=avoid-crypto-panic"]
+git = "https://github.com/zed-industries/oo7"
+branch = "avoid-crypto-panic"
+replace-with = "vendored-sources"
+
 [source."git+https://github.com/zed-industries/reqwest.git?rev=fd110f6998da16bbca97b6dddda9be7827c50e29"]
 git = "https://github.com/zed-industries/reqwest.git"
 rev = "fd110f6998da16bbca97b6dddda9be7827c50e29"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/zed-industries/tree-sitter-go-mod?rev=a9aea5e358cde4d0f8ff20b7bc4fa311e359c7ca"]
-git = "https://github.com/zed-industries/tree-sitter-go-mod"
-rev = "a9aea5e358cde4d0f8ff20b7bc4fa311e359c7ca"
 replace-with = "vendored-sources"
 
 [source."git+https://github.com/zed-industries/tree-sitter-go-work?rev=acb0617bf7f4fda02c6217676cc64acb89536dc7"]
@@ -141,6 +146,7 @@ replace-with = "vendored-sources"
 
 [source.vendored-sources]
 directory = "vendor"
+
 
 EOF
 
