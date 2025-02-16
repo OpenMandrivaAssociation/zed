@@ -1,5 +1,3 @@
 sources:
   zed-0.167.1.tar.gz: fc0ba307dddfee9b6335fcb59a41aaeebee058ad
   vendor.tar.xz: 525c1b6d39e53e2d5789c2d173581d98d574385e
-  libwebrtc-aarch64.tar.xz: f5070185e23e62a376c955ffa05da9ca4d7d4b93
-  webrtc-linux-x64-release.zip: 563599e93226b01766427b3287ef2c86139df014
